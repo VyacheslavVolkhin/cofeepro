@@ -11,14 +11,11 @@ document.addEventListener("DOMContentLoaded", function() {
 		let rect = el.getBoundingClientRect();
 		return (rect.top <= window.innerHeight);
 	}
-	window.addEventListener('load', function() {
-		let items = document.querySelectorAll('.item-animation');
-		
-		items.forEach(function(item) {
-			if (isElementInViewport(item)) {
-				item.classList.add('item-active');
-			}
-		});
+	let itemsStart = document.querySelectorAll('.item-animation');
+	itemsStart.forEach(function(item) {
+		if (isElementInViewport(item)) {
+			item.classList.add('item-active');
+		}
 	});
 	window.addEventListener('scroll', function() {
 		let items = document.querySelectorAll('.item-animation');
@@ -237,6 +234,57 @@ document.addEventListener("DOMContentLoaded", function() {
 		return false;
 			}
 		});
+	});
+
+
+	//slider
+	const slidersmain = document.querySelectorAll(".slider-main");
+
+	slidersmain.forEach((container) => {
+		const swiperEl = container.querySelector(".swiper");
+		if (!swiperEl) return;
+		const photosContainer = container.closest('.box-inner-wrap').querySelector('.photos-inner-wrap');
+		const photos = photosContainer ? photosContainer.querySelectorAll('.elm-photo') : [];
+		
+		const swiper = new Swiper(swiperEl, {
+			loop: false,
+			slidesPerGroup: 1,
+			slidesPerView: 1,
+			spaceBetween: 0,
+			autoHeight: true,
+			speed: 400,
+			pagination: false,
+			autoplay: {
+				delay: 4000,
+				disableOnInteraction: false,
+			},
+			navigation: false,
+			on: {
+				init: function() {
+					updateActivePhoto(this.activeIndex);
+				},
+				slideChange: function() {
+					updateActivePhoto(this.activeIndex);
+				},
+			},
+		});
+		function updateActivePhoto(activeIndex) {
+			photos.forEach((photo, index) => {
+				if (index === activeIndex) {
+					photo.classList.add('active');
+				} else {
+					photo.classList.remove('active');
+				}
+			});
+		}
+		if (photosContainer) {
+			photos.forEach((photo, index) => {
+				photo.addEventListener('click', function() {
+					swiper.slideTo(index);
+					updateActivePhoto(index);
+				});
+			});
+		}
 	});
 
 

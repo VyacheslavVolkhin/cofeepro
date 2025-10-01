@@ -1762,6 +1762,27 @@ html.with-fancybox body.hide-scrollbar {
   margin-bottom: var(--sectionMargin);
   position: relative;
 }
+.lead-box .slider-inner-wrap {
+  width: calc(51rem + 35%);
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+.lead-box .slider-inner-wrap .photo-inner-wrap {
+  width: auto;
+  -ms-flex: 1;
+      flex: 1;
+  max-width: calc(100% - 51rem);
+}
+.lead-box .slider-wrap {
+  margin: 0;
+}
+.lead-box .sl-wrap {
+  padding: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+}
 .lead-box .box-inner-wrap {
   padding: 20px 0 50px 0;
   display: -ms-flexbox;
@@ -1855,6 +1876,9 @@ html.with-fancybox body.hide-scrollbar {
   margin: 0 auto;
   width: 30px;
   height: 30px;
+}
+.lead-box .soc-inner-wrap .btn:hover .button-ico {
+  filter: var(--filterWhite);
 }
 .lead-box .section-title {
   margin-bottom: 1em;
@@ -2422,6 +2446,26 @@ html.with-fancybox body.hide-scrollbar {
   }
 }
 @media (max-width: 767px) {
+  .lead-box .slider-inner-wrap {
+    width: 100%;
+    -ms-flex-order: 1;
+        order: 1;
+  }
+  .lead-box .slider-inner-wrap .photo-inner-wrap,
+  .lead-box .slider-inner-wrap .title-inner-wrap {
+    width: 100%;
+    max-width: 100%;
+    -ms-flex-order: 1;
+        order: 1;
+  }
+  .lead-box .slider-inner-wrap .title-inner-wrap {
+    -ms-flex-order: 2;
+        order: 2;
+  }
+  .lead-box .sl-wrap {
+    -ms-flex-direction: column;
+        flex-direction: column;
+  }
   .about-box .subinfo-inner-wrap .info-wrap {
     padding: 0;
   }
@@ -2577,6 +2621,18 @@ html.with-fancybox body.hide-scrollbar {
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
+  .lead-box .slider-inner-wrap {
+    width: 64%;
+  }
+  .lead-box .slider-inner-wrap .title-inner-wrap {
+    width: 51%;
+  }
+  .lead-box .slider-inner-wrap .photo-inner-wrap {
+    width: 49%;
+    max-width: 49%;
+    -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+  }
   .lead-box .box-inner-wrap {
     padding-left: 0;
     padding-bottom: 8rem;
@@ -2597,6 +2653,15 @@ html.with-fancybox body.hide-scrollbar {
 @media (min-width: 1024px) and (max-width: 1499px) {
   .lead-box .box-inner-wrap {
     padding-left: 0;
+  }
+  .lead-box .slider-inner-wrap {
+    width: calc(40rem + 35%);
+  }
+  .lead-box .slider-inner-wrap .photo-inner-wrap {
+    max-width: calc(100% - 40rem);
+    -ms-flex: 1;
+        flex: 1;
+    width: auto;
   }
   .lead-box .title-inner-wrap {
     width: 40rem;
