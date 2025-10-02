@@ -25,11 +25,6 @@
 			bottom: 0;
 			left: 0;
 			right: 0;
-			&:hover {
-				&:after {
-					opacity: 1;
-				}
-			}
 		}
 	}
 	.title-inner-wrap {
@@ -321,6 +316,11 @@
 		aspect-ratio: 240/300;
 		border-radius: 120px 120px 0 0;
 		flex: 1;
+		&:hover {
+			&:after {
+				opacity: 1;
+			}
+		}
 	}
 	.links-inner-wrap {
 		margin-bottom: 15px;
@@ -660,8 +660,8 @@
 	}
 	&.bg-pattern {
 		&:before {
-			background: url(../img/main/pattern.png) center no-repeat;
-			background-size: cover;
+			background: url(../img/main/pattern.png) center top;
+			background-size: 1151px auto;
 			opacity: 0.01;
 		}
 	}

@@ -583,7 +583,7 @@ html.with-fancybox body.hide-scrollbar {
   left: 0;
   right: 0;
   background: url(../img/main/pattern.png) center top;
-  background-size: 1151/386;
+  background-size: 1151px auto;
   opacity: 0.01;
   z-index: -1;
   pointer-events: none;
@@ -1098,6 +1098,8 @@ html.with-fancybox body.hide-scrollbar {
     display: none;
   }
   .popup-menu-wrap .menu-main .menu .btn-menu {
+    padding-top: 6px;
+    padding-bottom: 8px;
     font-size: 18px;
   }
   .popup-menu-wrap li {
@@ -1108,7 +1110,8 @@ html.with-fancybox body.hide-scrollbar {
     display: block;
   }
   .popup-menu-wrap li:hover > .btn-menu {
-    background-color: #51606d;
+    /* background-color: fade(#51606d, 15); */
+    background-color: #1d374c;
     color: var(--clr-base);
   }
   .popup-menu-wrap .btn-menu {
@@ -1117,12 +1120,13 @@ html.with-fancybox body.hide-scrollbar {
     font-size: 20px;
     font-weight: 200;
     line-height: 1;
-    padding: 7px 14px;
+    padding: 5px 14px 9px 14px;
     color: var(--clr-base);
     z-index: 2;
   }
   .popup-menu-wrap .btn-menu:hover {
-    background-color: #51606d;
+    /* background-color: fade(#51606d, 15); */
+    background-color: #1d374c;
     color: var(--clr-base);
   }
   .popup-menu-wrap .btn-menu:before {
@@ -1339,6 +1343,10 @@ html.with-fancybox body.hide-scrollbar {
   opacity: 0;
   transition: all ease 0.2s;
   z-index: 2;
+}
+.elm-photo.photo-hover:hover:after,
+.tile-photo.photo-hover:hover:after {
+  opacity: 1;
 }
 .elm-photo.photo-play:hover:after,
 .tile-photo.photo-play:hover:after {
@@ -1647,9 +1655,6 @@ html.with-fancybox body.hide-scrollbar {
   bottom: 0;
   left: 0;
   right: 0;
-}
-.about-box .photo-inner-wrap .elm-photo:hover:after {
-  opacity: 1;
 }
 .about-box .title-inner-wrap {
   margin: 0 0 70px auto;
@@ -1991,6 +1996,9 @@ html.with-fancybox body.hide-scrollbar {
   border-radius: 120px 120px 0 0;
   -ms-flex: 1;
       flex: 1;
+}
+.contacts-box .elm-photo:hover:after {
+  opacity: 1;
 }
 .contacts-box .links-inner-wrap {
   margin-bottom: 15px;
@@ -2369,8 +2377,8 @@ html.with-fancybox body.hide-scrollbar {
   background: var(--clr-bg-section);
 }
 .section-bg.bg-pattern:before {
-  background: url(../img/main/pattern.png) center no-repeat;
-  background-size: cover;
+  background: url(../img/main/pattern.png) center top;
+  background-size: 1151px auto;
   opacity: 0.01;
 }
 .section-bg:before {
@@ -2851,27 +2859,33 @@ select.form-input:required:invalid {
   color: var(--clr-base);
   background-color: transparent;
 }
-.button-border:not(:hover):before {
+.button-border:hover {
+  background-color: transparent;
+  border: none;
+}
+.button-border:hover:before {
+  opacity: 1;
+}
+.button-border:before,
+.button-border:after {
+  content: "";
+  display: block;
+  transition: all ease 0.2s;
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  left: 2px;
+  right: 2px;
+  border: 1px solid #6b6054;
+  opacity: 0;
+}
+.button-border:after {
+  opacity: 1;
   border-color: var(--clr-att);
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-}
-.button-border:hover {
-  background-color: transparent;
-  border: none;
-}
-.button-border:before {
-  content: "";
-  display: block;
-  transition: all ease 0.2s;
-  position: absolute;
-  top: 1px;
-  bottom: 1px;
-  left: 1px;
-  right: 1px;
-  border: 1px solid #6b6054;
 }
 .button-full {
   width: 100%;

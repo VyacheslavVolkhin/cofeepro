@@ -165,29 +165,34 @@ select.form-input:required:invalid {
 	&:not(:hover) {
 		color: var(--clr-base);
 		background-color: transparent;
-		&:before {
-			border-color: var(--clr-att);
-			top: 0;
-			bottom: 0;
-			left: 0;
-			right: 0;
-		}
 	}
 	&:hover {
 		background-color: transparent;
 		border: none;
+		&:before {
+			opacity: 1;
+		}
 	}
-	&:before {
+	&:before, &:after {
 		content: "";
 		display: block;
 		position: absolute;
 		transition: all ease 0.2s;
 		position: absolute;
-		top: 1px;
-		bottom: 1px;
-		left: 1px;
-		right: 1px;
+		top: 2px;
+		bottom: 2px;
+		left: 2px;
+		right: 2px;
 		border: 1px solid #6b6054;
+		opacity: 0;
+	}
+	&:after {
+		opacity: 1;
+		border-color: var(--clr-att);
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
 	}
 }
 .button-full {

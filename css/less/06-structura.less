@@ -96,7 +96,7 @@ html.with-fancybox body.hide-scrollbar {
 		left: 0;
 		right: 0;
 		background: url(../img/main/pattern.png) center top;
-		background-size: 1151/386;
+		background-size: 1151px auto;;
 		opacity: 0.01;
 		z-index: -1;
 		pointer-events: none;
@@ -551,6 +551,8 @@ html.with-fancybox body.hide-scrollbar {
 					}
 				}
 				.btn-menu {
+					padding-top: 6px;
+					padding-bottom: 8px;
 					font-size: 18px;
 				}
 			}
@@ -562,7 +564,8 @@ html.with-fancybox body.hide-scrollbar {
 					display: block;
 				}
 				&>.btn-menu {
-					background-color: fade(#51606d, 165);
+					/* background-color: fade(#51606d, 15); */
+					background-color: #1d374c;
 					color: var(--clr-base);
 				}
 			}
@@ -573,11 +576,12 @@ html.with-fancybox body.hide-scrollbar {
 			font-size: 20px;
 			font-weight: 200;
 			line-height: 1;
-			padding: 7px 14px;
+			padding: 5px 14px 9px 14px;
 			color: var(--clr-base);
 			z-index: 2;
 			&:hover {
-				background-color: fade(#51606d, 165);
+				/* background-color: fade(#51606d, 15); */
+				background-color: #1d374c;
 				color: var(--clr-base);
 			}
 			&:before {
