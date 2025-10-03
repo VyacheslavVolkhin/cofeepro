@@ -585,7 +585,7 @@ html.with-fancybox body.hide-scrollbar {
   background: url(../img/main/pattern.png) center top;
   background-size: 1151px auto;
   opacity: 0.01;
-  z-index: -1;
+  z-index: -2;
   pointer-events: none;
 }
 .nav,
@@ -1745,6 +1745,17 @@ html.with-fancybox body.hide-scrollbar {
   background: url(../img/main/page.jpg) center no-repeat;
   background-size: cover;
   opacity: 0.1;
+}
+.page-lead-box.section-bg:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -2;
+  background: var(--clr-bg);
 }
 .page-lead-box .title-wrap {
   max-width: 60%;

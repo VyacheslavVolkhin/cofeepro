@@ -96,12 +96,22 @@
 	display: flex;
 	align-items: flex-end;
 	gap: 10px 3rem;
-	
 	&.section-bg {
 		&:before {
 			background: url(../img/main/page.jpg) center no-repeat;
 			background-size: cover;
 			opacity: 0.1;
+		}
+		&:after {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			z-index: -2;
+			background: var(--clr-bg);
 		}
 	}
 	.title-wrap {
